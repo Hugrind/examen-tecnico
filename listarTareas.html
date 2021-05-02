@@ -17,20 +17,27 @@
 </head>
 
 <body>
-    <main class="contenedor">
+    <main>
+        <h1>Lista de mascotas</h1>
+        <div class="content">
+            <div class="content">
+                <label for="txt-filtro">Filtrar</label>
+                <input type="text" id="txt-filtro">
+            </div>
+        </div>
+
 
         <div class="content">
-
-
-
-            <table id="tbl-tareas">
+            <table id="tbl-tareas" class="tabla">
                 <thead>
                     <tr>
-                        <th>Fecha de la tarea</th>
-                        <th>nombre de la tarea</th>
-                        <th>Descripcion de la tarea</th>
-                        <th>Prioridad de la tarea</th>
-                        <th>Encargado de la tarea</th>
+                        <th>Fecha</th>
+                        <th>Nombre </th>
+                        <th>Descripcion</th>
+                        <th>Prioridad</th>
+                        <th>Encargado</th>
+                        <th></th>
+                        <th></th>
                         <th></th>
                     </tr>
                 </thead>
@@ -39,12 +46,13 @@
                 </tbody>
             </table>
 
+
         </div>
 
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+        <script src="js/validacion.js"></script>
+        <script src="js/listaTareas.js"></script>
 
-    </main>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
-    <script src="js/validacion.js"></script>
 
 </body>
 

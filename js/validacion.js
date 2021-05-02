@@ -72,10 +72,30 @@ let validar = () => {
             error = true;
         } else {
             inputs_requeridos[i].classList.remove('input-error');
+            datosValidados();
+
         }
     }
     return error;
 };
+
+let datosValidados = async() => {
+
+    let fechaTarea = txtFechaTarea.value;
+    let nombreTarea = txtNombreTarea.value;
+    let descripcionTarea = txtDescripcionTarea.value;
+    let categoriaTarea = sltCategoria.value;
+    let encargadoTarea = sltEncargado.value;
+
+
+
+
+    enviarDatos(fechaTarea, nombreTarea, descripcionTarea, categoriaTarea, encargadoTarea);
+
+};
+
+
+
 
 // let limpiar = () => {
 //     txtFechaTarea = "";

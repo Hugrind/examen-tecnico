@@ -1,18 +1,45 @@
 'use strict';
 const tabla = document.querySelector('#tbl-tareas tbody');
+const inputFiltro = document.querySelector('#txt-filtro');
 
-let listaRutinas = [];
+
+let listaTareas = [];
 
 const llenarListaTareas = async() => {
-    listaRutinas = await listarRutinas();
+    listaTareas = await listarRutinas();
     mostrarTabla();
 };
 
 const mostrarTabla = () => {
-    listaRutinas.forEach(tarea => {
+    tabla.innerHTML = "";
+    let filtro = inputFiltro.value.toLowerCase();
+
+
+
+    listaMascotasCliente = await listar_mascotas_cliente();
+
+
+
+
+    listaTareas.forEach(tarea => {
         let fila = tabla.insertRow();
-        fila.insertCell().innerHTML = `Creación: ${tarea.creacion}`;
-        fila.insertCell().innerHTML = tarea.vencimiento;
+        fila.insertCell().innerHTML = tarea.fecha;
+        fila.insertCell().innerHTML = tarea.nombre;
+        fila.insertCell().innerHTML = tarea.descripcion;
+        fila.insertCell().innerHTML = tarea.prioridad;
+        fila.insertCell().innerHTML = tarea.encargado;
+
+
+        let celdaAcciones = fila.insertCell();
+
+        let botonModificar = document.createElement("button");
+
+        botonModificar.innerText = "Editar";
+        botonModificar.addEventListener("click", () => {
+
+            sessionStorage.setItem("usuarioSeleccionado", JSON.stringify(tarea));
+            window.location.href = "index.html";
+        })
 
         let listaEjercicios = document.createElement('ul');
         tarea.ejercicios.forEach(ejercicio => {
