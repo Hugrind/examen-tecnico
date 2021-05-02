@@ -108,6 +108,7 @@ let obtener_datos = () => {
             'icon': 'success'
         }).then(() => {
             // limpiar();
+            window.location.href = 'listarTareas.html';
         });
     }
 };
